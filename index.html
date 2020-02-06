@@ -12,7 +12,7 @@
     <h1>Student Grade Table</h1>
   </header>
 <main>
-<table class="table table-striped">
+<table class="table table-striped" id="table-el">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Name</th>
@@ -20,22 +20,8 @@
       <th scope="col">Grade</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>Mark</td>
-      <td>Web Development</td>
-      <td>47</td>
-    </tr>
-    <tr>
-      <td>Jake</td>
-      <td>Business 101</td>
-      <td>95</td>
-    </tr>
-    <tr>
-      <td>Jacky</td>
-      <td>Web Development 237</td>
-      <td>100</td>
-    </tr>
+  <tbody id="t-body">
+
   </tbody>
 </table>
 </main>
@@ -43,6 +29,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 <script src="components/app.js"></script>
+<script src="components/grade-table.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
