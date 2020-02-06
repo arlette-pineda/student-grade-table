@@ -3,8 +3,6 @@ class App{
   this.gradeTable = gradeTable;
   this.handleGetGradesError = this.handleGetGradesError.bind(this);
   this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
-  this.getGrades = getGrades;
-  this.start = start;
 
   }
   handleGetGradesError(error){
@@ -15,10 +13,14 @@ class App{
   }
   getGrades(){
     $.ajax({
+
       method: "GET",
-      url: "",
-      error: handleGetGradesError,
-      success: handleGetGradesSuccess,
+      url: "http://sgt.lfzprototypes.com/api/grades",
+      headers: {
+        "X-Access-Token": "LtCNRO4c"
+      },
+      error: this.handleGetGradesError,
+      success: this.handleGetGradesSuccess,
     })
   }
   start(){
