@@ -14,7 +14,6 @@ class App{
     for(var k = 0; k < grades.length; k++){
       total += grades[k].grade;
     }
-    console.log(total);
     var newAverage = total / grades.length;
     this.pageHeader.updateAverage(newAverage);
   }
@@ -33,5 +32,4 @@ class App{
   start(){
     this.getGrades();
   }
-
 }
