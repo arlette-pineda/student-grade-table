@@ -8,7 +8,11 @@ class GradeForm{
   }
   handleSubmit(event){
     event.preventDefault();
-    FormData(event.target);
-    console.log("hi");
+    var formData = new FormData(event.target);
+    var sGrade = formData.get('grades.grade')
+    var sName = formData.get('grades.name');
+    var sCourse = formData.get('grades.course');
+    this.createGrade(sGrade, sName, sCourse);
+    event.target.reset();
   }
 }
