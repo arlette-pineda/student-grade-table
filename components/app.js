@@ -12,9 +12,11 @@ class App{
     this.gradeTable.updateGrades(grades);
     var total = 0;
     for(var k = 0; k < grades.length; k++){
-      total += grades[k];
+      total += grades[k].grade;
     }
-    var grAvg = total / grades.length;
+    console.log(total);
+    var newAverage = total / grades.length;
+    this.pageHeader.updateAverage(newAverage);
   }
   getGrades(){
     $.ajax({
