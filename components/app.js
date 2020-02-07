@@ -19,7 +19,6 @@ class App{
   }
   getGrades(){
     $.ajax({
-
       method: "GET",
       url: "http://sgt.lfzprototypes.com/api/grades",
       headers: {

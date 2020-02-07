@@ -8,20 +8,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
 </head>
 <body>
+  <main class="container">
   <header>
-  <div class="container">
-    <div class="row">
+    <div class="row mt-4 mb-4">
       <div class="col">
         <h1>Student Grade Table</h1>
       </div>
       <div class="col">
-        <h2>Average Grade <span class="badge badge-secondary"></span></h2>
+        <h2 class="m-auto text-right">Average Grade <span class="badge badge-secondary m-auto pl-4 pr-4 pt-3 pb-3"></span></h2>
       </div>
   </div>
-  </div>
   </header>
-<main>
-<table class="table" id="table-el">
+<table class="table table-hover" id="table-el">
   <thead>
     <tr>
       <th scope="col">Name</th>
@@ -30,7 +28,6 @@
     </tr>
   </thead>
   <tbody id="t-body">
-
   </tbody>
 </table>
 </main>
