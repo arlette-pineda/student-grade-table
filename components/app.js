@@ -57,6 +57,12 @@ class App{
   deleteGrade(id){
     console.log(id);
   }
+  handleDeleteGradeError(error){
+    console.error(error);
+  }
+  handleDeleteGradeSuccess(){
+    this.getGrades();
+  }
   start(){
     this.getGrades();
     this.gradeForm.onSubmit(this.createGrade);
