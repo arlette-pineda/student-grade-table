@@ -6,33 +6,33 @@ class GradeTable{
     var tbody = this.tableElement.querySelector('#t-body')
     tbody.textContent = '';
     for(var i = 0; i < grades.length; i++){
-      this.renderGradeRow;
-      this.deleteGrade;
+      this.renderGradeRow(grades[i], this.deleteGrade);
         //where the dom creation was here
     }
   }
   onDeleteClick(deleteGrade){
     this.deleteGrade = deleteGrade;
   }
-  renderGradeRow(data, deleteGrade){
+  renderGradeRow(grades, deleteGrade){
       var newTRow = document.createElement('tr');
       var stuName = document.createElement('td');
       stuName.setAttribute('scope', 'row');
-      stuName.textContent = grades[i].name;
+      stuName.textContent = grades.name;
       var stuCourse = document.createElement('td');
-      stuCourse.textContent = grades[i].course;
+      stuCourse.textContent = grades.course;
       var stuGrade = document.createElement('td');
-      stuGrade.textContent = grades[i].grade;
+      stuGrade.textContent = grades.grade;
       var stuOperation = document.createElement('td');
       var tDBut = document.createElement('button');
       tDBut.setAttribute('type', 'button');
       tDBut.setAttribute('class', 'btn, btn-danger');
       tDBut.textContent = 'DELETE';
       tDBut.addEventListener('click', function(){
-        deleteGrade(data.id);
+        deleteGrade(grades.id);
       });
       stuOperation.append(tDBut);
       newTRow.append(stuName, stuCourse, stuGrade, stuOperation);
+      var tbody = this.tableElement.querySelector('#t-body')
       tbody.appendChild(newTRow);
       document.querySelector('thead').classList.add('thead-dark');
       this.tableElement.classList.add('table-striped');
