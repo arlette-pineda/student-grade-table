@@ -6,19 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Student Grade Table</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
   <main class="container">
   <header>
-    <div class="row mt-4 mb-4">
-      <div class="col">
+    <div class="row mt-4 mb-4" style="border-bottom: solid lightgray 1px">
+      <div class="col mb-3">
         <h1>Student Grade Table</h1>
       </div>
-      <div class="col">
-        <h2 class="m-auto text-right">Average Grade <span class="badge badge-secondary m-auto pl-4 pr-4 pt-3 pb-3"></span></h2>
+      <div class="col mb-3">
+        <h3 class="m-auto text-right">Average Grade <span class="badge badge-secondary m-auto pl-4 pr-4 pt-3 pb-3"></span></h3>
       </div>
   </div>
   </header>
+  <div class="row">
+    <div class="col-8">
 <table class="table table-hover" id="table-el">
   <thead>
     <tr>
@@ -30,6 +33,34 @@
   <tbody id="t-body">
   </tbody>
 </table>
+</div>
+  <div class="col-4">
+    <form>
+      <h3 class=" mt-2 mb-3">Add Grade</h3>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-alt"></i></span>
+      </div>
+      <input type="text" name="name" class="form-control" placeholder="Student Name" aria-label="Student Name" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="far fa-list-alt"></i></span>
+      </div>
+      <input type="text" name="course" class="form-control" placeholder="Student Course" aria-label="Student Course" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-graduation-cap"></i></span>
+        </div>
+        <input type="text" name="grade" class="form-control" placeholder="Student Grade" aria-label="Student Grade" aria-describedby="basic-addon1">
+    </div> <!-- closing div for input -->
+    <button type="submit" class="btn btn-success btn-sm mr-2">Add</button>
+    <button type="reset" class="btn btn-outline-secondary btn-sm">Cancel</button>
+  </form>
+  </div> <!-- closing div for div col -->
 </main>
 
 
@@ -37,6 +68,7 @@
 <script src="components/app.js"></script>
 <script src="components/grade-table.js"></script>
 <script src="components/page-header.js"></script>
+<script src="components/grade-form.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
