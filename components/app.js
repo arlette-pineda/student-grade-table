@@ -21,7 +21,12 @@ class App{
     for(var k = 0; k < grades.length; k++){
       total += grades[k].grade;
     }
-    var newAverage = total / grades.length;
+    var newAverage;
+    if(grades.length === 0){
+      newAverage = "N/A";
+    } else {
+     newAverage = total / grades.length;
+    }
     this.pageHeader.updateAverage(newAverage);
   }
   getGrades(){
