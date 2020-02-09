@@ -10,11 +10,11 @@ class GradeTable{
       var row = this.renderGradeRow(grades[i], this.deleteGrade);
       tbody.appendChild(row);
     }
-    // if("grades parameter is true"){
-    //   "p is hidden (how it is currently)"
-    // } else {
-    //   ""
-    // }
+    if(grades.length === 0){
+      this.noGradesElement.classList.remove('d-none');
+    } else {
+      this.noGradesElement.classList.add('d-none');
+    }
   }
   onDeleteClick(deleteGrade){
     this.deleteGrade = deleteGrade;
