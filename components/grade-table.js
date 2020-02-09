@@ -7,9 +7,14 @@ class GradeTable{
     var tbody = this.tableElement.querySelector('#t-body')
     tbody.textContent = '';
     for(var i = 0; i < grades.length; i++){
-      this.renderGradeRow(grades[i], this.deleteGrade);
-        //where the dom creation was here
+      var row = this.renderGradeRow(grades[i], this.deleteGrade);
+      tbody.appendChild(row);
     }
+    // if("grades parameter is true"){
+    //   "p is hidden (how it is currently)"
+    // } else {
+    //   ""
+    // }
   }
   onDeleteClick(deleteGrade){
     this.deleteGrade = deleteGrade;
@@ -33,11 +38,8 @@ class GradeTable{
       });
       stuOperation.append(tDBut);
       newTRow.append(stuName, stuCourse, stuGrade, stuOperation);
-      var tbody = this.tableElement.querySelector('#t-body')
-      tbody.appendChild(newTRow);
-      document.querySelector('thead').classList.add('thead-dark');
-      this.tableElement.classList.add('table-striped');
-  }
+      return newTRow;
+    }
 }
 
 
