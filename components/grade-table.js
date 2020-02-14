@@ -1,23 +1,49 @@
 class GradeTable{
-  constructor(tableElement){
+  constructor(tableElement, noGradesElement){
     this.tableElement = tableElement;
+    this.noGradesElement = noGradesElement;
   }
   updateGrades(grades){
     var tbody = this.tableElement.querySelector('#t-body')
     tbody.textContent = '';
     for(var i = 0; i < grades.length; i++){
+      var row = this.renderGradeRow(grades[i], this.deleteGrade);
+      tbody.appendChild(row);
+    }
+    if(grades.length === 0){
+      this.noGradesElement.classList.remove('d-none');
+    } else {
+      this.noGradesElement.classList.add('d-none');
+    }
+  }
+  onDeleteClick(deleteGrade){
+    this.deleteGrade = deleteGrade;
+  }
+  renderGradeRow(grades, deleteGrade){
       var newTRow = document.createElement('tr');
       var stuName = document.createElement('td');
       stuName.setAttribute('scope', 'row');
-      stuName.textContent = grades[i].name;
+      stuName.textContent = grades.name;
       var stuCourse = document.createElement('td');
-      stuCourse.textContent = grades[i].course;
+      stuCourse.textContent = grades.course;
       var stuGrade = document.createElement('td');
-      stuGrade.textContent = grades[i].grade;
-      newTRow.append(stuName, stuCourse, stuGrade);
-      tbody.appendChild(newTRow);
-      document.querySelector('thead').classList.add('thead-dark');
-      this.tableElement.classList.add('table-striped');
+      stuGrade.textContent = grades.grade;
+      var stuOperation = document.createElement('td');
+      var tDBut = document.createElement('button');
+      tDBut.setAttribute('type', 'button');
+      tDBut.setAttribute('class', 'btn, btn-danger');
+      tDBut.textContent = 'DELETE';
+      tDBut.addEventListener('click', function(){
+        deleteGrade(grades.id);
+      });
+      stuOperation.append(tDBut);
+      newTRow.append(stuName, stuCourse, stuGrade, stuOperation);
+      return newTRow;
     }
-  }
 }
+
+
+//
+// var tableRow = document.createElement('tr');
+// var tabDName = document.createElement('td');
+// var tabDCourse = document.createElement('td');
