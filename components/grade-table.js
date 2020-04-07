@@ -41,9 +41,3 @@ class GradeTable{
       return newTRow;
     }
 }
-
-
-//
-// var tableRow = document.createElement('tr');
-// var tabDName = document.createElement('td');
-// var tabDCourse = document.createElement('td');
